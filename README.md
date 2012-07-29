@@ -10,29 +10,33 @@ Take a look at [an example](http://oliverjash.github.com/FormAccordion/).
 
 The plugin follows a simple markup pattern: any children elements are treated as form rows. For example:
 
-    <form id="example-1">
-      <div>
-        <label>…</label>
-        <input>
-      </div>
-      <div>
-        <label>…</label>
-        <input>
-      </div>
-      <div>
-        <label>…</label>
-        <input>
-      </div>
-    </form>
+``` html
+<form id="example-1">
+  <div>
+    <label>…</label>
+    <input>
+  </div>
+  <div>
+    <label>…</label>
+    <input>
+  </div>
+  <div>
+    <label>…</label>
+    <input>
+  </div>
+</form>
+```
 
 Above is the initial required structure – a series of elements (form rows) wrapped in a container. This can be any combination of elements that has the same structure.
 
 Once you have your markup, initialise the plugin:
 
-    $('#example-1').formAccordion(
-      { auto: true
-      }
-    );
+``` js
+$('#example-1').formAccordion(
+  { auto: true
+  }
+);
+```
 
 ## Options
 
@@ -45,14 +49,16 @@ Form Accordion can take an optional paramater - an object of key/value options:
 
 ### Example
 
-    $('#example-2').formAccordion(
-      { auto: false
-      , animate: true
-      , animationDuration: 200
-      , rows:
-        {}
-      }
-    );
+``` js
+$('#example-2').formAccordion(
+  { auto: false
+  , animate: true
+  , animationDuration: 200
+  , rows:
+    {}
+  }
+);
+```
 
 By default, `auto` is disabled. The plugin expects that you will want to write your own tests.
 
@@ -66,23 +72,25 @@ The options you may need to write your own tests are:
 
 #### Example
 
-    $('#example-2').formAccordion(
-      { rows:
-        { 0:
-          { toggleNext: 4
-          , condition: function ($target, $el) {
-              return $target.is(':checked') && $target.val() !== 'disagree';
-            }
-          }
-        , 2:
-          { toggleNext: 2
-          , condition: function ($target, $el) {
-              return $target.val() !== '';
-            }
-          }
+``` js
+$('#example-2').formAccordion(
+  { rows:
+    { 0:
+      { toggleNext: 4
+      , condition: function ($target, $el) {
+          return $target.is(':checked') && $target.val() !== 'disagree';
         }
       }
-    );
+    , 2:
+      { toggleNext: 2
+      , condition: function ($target, $el) {
+          return $target.val() !== '';
+        }
+      }
+    }
+  }
+);
+```
 
 ## Requirements
 
