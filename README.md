@@ -29,7 +29,10 @@ Above is the initial required structure – a series of elements (form rows) wra
 
 Once you have your markup, initialise the plugin:
 
-    $('#example-1').formAccordion();
+    $('#example-1').formAccordion(
+      { auto: true
+      }
+    );
 
 ## Options
 
