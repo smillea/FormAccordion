@@ -85,10 +85,6 @@ The options you may need to write your own tests are:
 
 * jQuery (tested on 1.7)
 
-### Browser Support
-
-Tested and working in all browsers. Element transitions are powered by CSS3, so those elements will not transition in some non-HTML5 browsers. However, the fading transition from slide to slide will work in all browsers.
-
 ## Let's Make It Better
 
 I would love to hear more about how to improve Form Accordion. Play with it and fork away. If you have any questions, contact me on [Twitter](http://twitter.com/OliverJAsh).
